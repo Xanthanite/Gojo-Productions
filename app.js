@@ -22,6 +22,28 @@ app.get("/", function(req, res) {
 })
 
 
+app.get("/contact", function(req, res) {
+  res.render("contact", {
+		page: req.url,
+		nav: {
+			page: '/contact'
+		}
+	});
+})
+
+app.get("/submitted", function(req, res) {
+	res.render("submitted", {
+		page: req.url,
+		nav: {
+			page: '/submitted'
+		}
+	});
+})
+
+app.post("/contact", function(req, res) {
+	console.log('Data: ', req.body);
+	res.redirect('/submitted');
+})
 
 
 http.listen(process.env.PORT || "3000", function() {

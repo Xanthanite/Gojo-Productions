@@ -1,0 +1,400 @@
+<%- include('partials/header.ejs') %>
+
+<form id="contact-page" class="row page-section" method="POST">
+
+  <div id="cup-title-container" class="col-12 align-items-end text-center d-flex">
+
+    <h1 id="cup-title">Contact Us</h1>
+
+  </div>
+  
+  <div id="cup-tab-container" class="col-12">
+    <!-- One "tab" for each step in the form: -->
+    <div class="tab">
+      <label for="firstName" class="form-label">First Name*</label>
+      <p id="firstName" class="contact-input-container"><input required placeholder="First name..." name="firstName" oninput="this.className = ''"></p>
+      <label for="lastName" class="form-label">Last Name*</label>
+      <p id="lastName" class="contact-input-container"><input required placeholder="Last name..." name="lastName" oninput="this.className = ''"></p>
+      <label for="email" class="form-label">Email*</label>
+      <p id="email" class="contact-input-container"><input required placeholder="E-mail..." name="email" type="email" oninput="this.className = ''"></p>
+      <label for="phone" class="form-label">Phone #*</label>
+      <p id="phone" class="contact-input-container"><input id="contactPhone" name="phone" placeholder="(999) 999-9999" oninput="this.className = ''"></p>
+    </div>
+    
+    <div class="tab">
+      <label for="cup-radio-input-container" class="form-label cup-tab-title">Reason For Contact</label>
+      <span class="radio-separator"></span>
+      <div id="cup-radio-input-container" class="contact-input-radio-container">
+        <fieldset id="contact-reason">
+        <div class="form-check">
+          <input required class="form-check-input service-check-input" type="radio" value="general-inquiry" name="contact-reason" id="flexRadioDefault1">
+          <label class="form-check-label form-label" for="flexRadioDefault1">General Inquiry</label>
+        </div>
+        <div class="form-check">
+          <input required class="form-check-input service-check-input" type="radio" value="custom-music-production" name="contact-reason" id="flexRadioDefault2">
+          <label class="form-check-label form-label" for="flexRadioDefault2">Custom Music Production</label>
+        </div>
+        <div class="form-check">
+          <input required class="form-check-input service-check-input" type="radio" value="mixing-engineering" name="contact-reason" id="flexRadioDefault3">
+          <label class="form-check-label form-label" for="flexRadioDefault3">Mixing & Engineering</label>
+        </div>
+        <div class="form-check">
+          <input required class="form-check-input service-check-input" type="radio" value="graphic-services" name="contact-reason" id="flexRadioDefault5">
+          <label class="form-check-label form-label" for="flexRadioDefault5">Graphic Services</label>
+        </div>
+        <div class="form-check">
+          <input required class="form-check-input service-check-input" type="radio" value="web-services" name="contact-reason" id="flexRadioDefault4">
+          <label class="form-check-label form-label" for="flexRadioDefault4">Web Services</label>
+        </div>
+        <label id="contact-reason-error" class="error" for="contact-reason">This field is required.</label>
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="subTab subGroup0">
+
+      <label for="cup-0a-container" class="form-label cup-subtab-title">General Inquiry</label>
+
+      <div id="cup-0a-container" class="contact-input-radio-container">
+
+      <label for="cup-radio-lookingtopurchase-container" class="form-label">Are you looking to purchase a beat?</label>
+
+      <span class="radio-separator"></span>
+
+      <div id="cup-radio-lookingtopurchase-container" class="contact-input-radio-container">
+        <fieldset id="looking-to-purchase">
+        <div class="form-check">
+          <input required class="form-check-input" type="radio" value="yes" name="looking-to-purchase" id="flexRadioDefault6">
+          <label class="form-check-label form-label" for="flexRadioDefault6">Yes</label>
+        </div>
+        <div class="form-check">
+          <input required class="form-check-input" type="radio" value="no" name="looking-to-purchase" id="flexRadioDefault7">
+          <label class="form-check-label form-label" for="flexRadioDefault7">No</label>
+        </div>
+        </fieldset>
+      </div>
+
+      <label for="general-inquiry-textarea" class="form-label">Your message:</label>
+      
+      <textarea required id="general-inquiry-textarea" name="message-gi" rows="4" cols="50"></textarea>
+
+      </div>
+
+    </div>
+
+    <div class="subTab subGroup1">
+
+      <label for="cup-1a-container" class="form-label cup-subtab-title">Custom Music Production</label>
+
+      <div id="cup-1a-container" class="contact-input-radio-container">
+
+        <label for="cup-radio-customproductionfor-container" class="form-label cup-radio-title">Who is this production for?</label>
+
+        <span class="radio-separator"></span>
+
+        <div id="cup-radio-customproductionfor-container" class="contact-input-radio-container">
+          <fieldset id="custom-production-for">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="myself" name="custom-production-for" id="flexRadioDefault8">
+            <label class="form-check-label form-label" for="flexRadioDefault8">Myself (Independent)</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="an artist I work with" name="custom-production-for" id="flexRadioDefault9">
+            <label class="form-check-label form-label" for="flexRadioDefault8">An artist I work with</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="a label I represent" name="custom-production-for" id="flexRadioDefault9">
+            <label class="form-check-label form-label" for="flexRadioDefault9">A label I represent/work for</label>
+          </div>
+          </fieldset>
+        </div>
+
+        <label for="cup-radio-howmanysongs-container" class="form-label cup-radio-title">How many songs?</label>
+
+        <span class="radio-separator"></span>
+
+        <div id="cup-radio-howmanysongs-container" class="contact-input-radio-container">
+          <fieldset id="how-many-songs">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="single" name="how-many-songs" id="flexRadioDefault10">
+            <label class="form-check-label form-label" for="flexRadioDefault10">Single</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="ep" name="how-many-songs" id="flexRadioDefault11">
+            <label class="form-check-label form-label" for="flexRadioDefault11">EP (2-4 Songs)</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="album" name="how-many-songs" id="flexRadioDefault12">
+            <label class="form-check-label form-label" for="flexRadioDefault12">Album</label>
+          </div>
+          </fieldset>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="subTab subGroup1">
+
+      <label for="cup-1b-container" class="form-label cup-subtab-title">Custom Music Production</label>
+
+      <div id="cup-1b-container" class="contact-input-radio-container">
+
+        <label for="cup-radio-leaseorexclusive-container" class="form-label cup-radio-title">Would you like exclusive rights or a lease?</label>
+
+        <span class="radio-separator"></span>
+
+        <div id="cup-radio-leaseorexclusive-container" class="contact-input-radio-container">
+          <fieldset id="lease-or-exclusive">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="exclusive" name="lease-or-exclusive" id="flexRadioDefault13">
+            <label class="form-check-label form-label" for="flexRadioDefault13">Exclusive</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="lease" name="lease-or-exclusive" id="flexRadioDefault14">
+            <label class="form-check-label form-label" for="flexRadioDefault14">Lease</label>
+          </div>
+          </fieldset>
+        </div>
+
+        <label for="cup-radio-cmpaddon-container" class="form-label cup-radio-title">Are you interested in social media management or marketing/promotion as an additional service?</label>
+
+        <span class="radio-separator"></span>
+
+        <div id="cup-cmpaddon-container" class="contact-input-radio-container">
+          <fieldset id="cmp-addon">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="yes add promotion or smm" name="cmp-addon" id="flexRadioDefault15">
+            <label class="form-check-label form-label" for="flexRadioDefault15">Yes, please!</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="no promotion or smm" name="cmp-addon" id="flexRadioDefault16">
+            <label class="form-check-label form-label" for="flexRadioDefault16">No, thank you</label>
+          </div>
+          </fieldset>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="subTab subGroup1">
+
+      <label for="cup-1c-container" class="form-label cup-subtab-title">Custom Music Production</label>
+
+      <div id="cup-1c-container" class="contact-input-radio-outer">
+
+        <label for="prior-links-cmp" class="form-label">Please share links to your social media and/or prior music:</label>
+      
+        <textarea required id="prior-links-cmp" name="prior-links-cmp" class="form-textarea" rows="3" cols="50"></textarea>
+
+        <label for="add-comments-cmp" class="form-label">Additional comments?</label>
+      
+        <textarea id="add-comments-cmp" name="add-comments-cmp" class="form-textarea" rows="4" cols="50"></textarea>
+
+      </div>
+
+    </div>
+
+
+    <div class="subTab subGroup2">
+
+      <label for="cup-2a-container" class="form-label cup-subtab-title">Mixing & Engineering</label>
+  
+      <div id="cup-2a-container" class="contact-input-radio-container">
+  
+      <label for="cup-radio-typeofengineering-container" class="form-label">What type of engineering?</label>
+  
+      <span class="radio-separator"></span>
+  
+        <div id="cup-radio-typeofengineering-container" class="contact-input-radio-container">
+
+          <fieldset id="type-of-engineering">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="instruments and or percussion" name="type-of-engineering" id="flexRadioDefault6">
+            <label class="form-check-label form-label" for="flexRadioDefault17">Instruments and/or Percussion Only</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="vocals only" name="type-of-engineering" id="flexRadioDefault7">
+            <label class="form-check-label form-label" for="flexRadioDefault18">Vocals Only</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="instruments and or percussion plus vocals" name="type-of-engineering" id="flexRadioDefault19">
+            <label class="form-check-label form-label" for="flexRadioDefault19">Instruments and/or Percussion + Vocals</label>
+          </div>
+          </fieldset>
+
+        </div>
+
+      </div>
+
+        <label for="cup-radio-howmanyengineering-container" class="form-label">How many songs?</label>
+
+        <span class="radio-separator"></span>
+
+        <div id="cup-radio-howmanyengineering-container" class="contact-input-radio-container">
+          <fieldset id="how-many-engineering">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="single" name="how-many-engineering" id="flexRadioDefault6">
+            <label class="form-check-label form-label" for="flexRadioDefault20">Single</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="ep" name="how-many-engineering" id="flexRadioDefault7">
+            <label class="form-check-label form-label" for="flexRadioDefault21">EP (2-4 Songs)</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="album" name="how-many-engineering" id="flexRadioDefault19">
+            <label class="form-check-label form-label" for="flexRadioDefault22">Album</label>
+          </div>
+          </fieldset>
+        </div>
+  
+    </div>
+
+    <div class="subTab subGroup2">
+
+      <label for="cup-2b-container" class="form-label cup-subtab-title">Mixing & Engineering</label>
+
+      <div id="cup-2b-container" class="contact-input-radio-container">
+  
+        <label for="cup-radio-addOnOffer-container" class="form-label cup-radio-title">Are you interested in social media management or marketing/promotion as an additional service?</label>
+
+        <span class="radio-separator"></span>
+
+        <div id="cup-mixaddon-container" class="contact-input-radio-container">
+
+        <fieldset id="mix-addon">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="yes add promotion or smm" name="mix-addon" id="flexRadioDefault23">
+            <label class="form-check-label form-label" for="flexRadioDefault15">Yes, please!</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="no promotion or smm" name="mix-addon" id="flexRadioDefault24">
+            <label class="form-check-label form-label" for="flexRadioDefault16">No, thank you</label>
+          </div>
+        </fieldset>
+
+        <label for="add-comments-mix" class="form-label cup-radio-title">Additional comments?</label>
+      
+        <textarea id="add-comments-mix" name="add-comments-mix" class="form-textarea" rows="4" cols="50"></textarea>
+
+        </div>
+
+      </div>
+  
+    </div>
+
+    <div class="subTab subGroup3">
+
+      <label for="cup-3a-container" class="form-label cup-subtab-title">Graphic Services</label>
+
+      <div id="cup-3a-container" class="contact-input-radio-container">
+  
+        <label for="cup-typeofgraphic-container" class="form-label cup-radio-title">What type of service are you interested in?</label>
+
+        <span class="radio-separator"></span>
+
+        <div id="cup-typeofgraphic-container" class="contact-input-radio-container">
+
+          <fieldset id="graphic-type">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="flyers & brochures" name="graphic-type" id="flexRadioDefault25">
+            <label class="form-check-label form-label" for="flexRadioDefault25">Flyer(s)/Brochure(s)</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="logos" name="graphic-type" id="flexRadioDefault26">
+            <label class="form-check-label form-label" for="flexRadioDefault26">Logo(s)</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="promo artwork" name="graphic-type" id="flexRadioDefault27">
+            <label class="form-check-label form-label" for="flexRadioDefault27">Promo Artwork (Album covers, EP Covers, Album art etc.)</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="other" name="graphic-type" id="flexRadioDefault28">
+            <label class="form-check-label form-label" for="flexRadioDefault28">Other/More Than One</label>
+          </div>
+          </fieldset>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="subTab subGroup4">
+
+      <label for="cup-4a-container" class="form-label cup-subtab-title">Website Services</label>
+
+      <div id="cup-4a-container" class="contact-input-radio-outer">
+  
+        <label for="cup-typeofweb-container" class="form-label cup-radio-title">What type of service are you interested in?</label>
+
+        <span class="radio-separator"></span>
+
+        <div id="cup-typeofweb-container" class="contact-input-radio-container">
+
+          <fieldset id="web-type">
+          <div class="form-check">
+            <input class="form-check-input form-check-web" type="radio" value="site design only" name="web-type" id="flexRadioDefault29">
+            <label class="form-check-label form-label" for="flexRadioDefault29">Website Design</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input form-check-web" type="radio" value="design & development" name="web-type" id="flexRadioDefault30">
+            <label class="form-check-label form-label" for="flexRadioDefault30">Design & Development/Deployment</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input form-check-web" type="radio" value="SEO" name="web-type" id="flexRadioDefault31">
+            <label class="form-check-label form-label" for="flexRadioDefault31">SEO (Search Engine Optimization)</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input form-check-web" type="radio" value="other or more than one" name="web-type" id="flexRadioDefault32">
+            <label class="form-check-label form-label" for="flexRadioDefault32">Other/More Than One</label>
+          </div>
+          </fieldset>
+          <fieldset id="ongoing-maintenance" class="hidden-web-question hidden-question">
+            <label for="ongoing-maintenance" class="form-label cup-radio-title">Would you like ongoing maintenance for your website?</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" value="yes" name="ongoing-maintenance" id="flexRadioDefault33">
+              <label class="form-check-label form-label" for="flexRadioDefault33">Yes</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" value="yes" name="ongoing-maintenance" id="flexRadioDefault34">
+              <label class="form-check-label form-label" for="flexRadioDefault34">No</label>
+            </div>
+          </fieldset>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+  
+  <div class="cup-button-container">
+    
+    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+    
+    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+  
+  </div>
+  
+  <!-- Circles which indicates the steps of the form: -->
+  <div id="step-holder" style="text-align:center;margin-top:40px;">
+    <span class="step"></span>
+    <span class="step"></span>
+  </div>
+  
+  </form> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include('partials/footer.ejs') %>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+	<head>
+
+		<title>Gojo Productions</title>
+		<meta name="viewport" content="width=device-width; initial-scale=1.0;">
+    <script src="https://kit.fontawesome.com/7acb4881bf.js" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOukb8nkTww96Sl0ugwVwQDRUzRcpygE0&libraries=places&callback=initMap"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel = "stylesheet" href = "/stylesheets/main.css">
+	</head>
+
+<body class="fade">
+
+  <% var pageIdentifier = Object.keys(nav); %>
+
+<nav id="the-navbar" class="navbar navbar-dark fixed-top navbar-expand-lg">
+
+  <div class="container-md">
+    
+    <a class="navbar-brand" href="/">Gojo Productions</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      
+      <span class="navbar-toggler-icon"></span>
+    
+    </button>
+    
+    <div class="collapse navbar-collapse ms-auto" id="navbarSupportedContent">
+
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        
+        <li id="topPage" class="nav-item
+        
+        <% Object.keys(nav).forEach(function(title) { %> 
+          <% if (nav[title] == '/home') { %> 
+            ">
+          <% } else if (nav[title] == '/contact' || nav[title] == '/submitted') { %>
+            d-none">
+            <% } %>
+          <% }) %>
+          
+          <a id="home" class="nav-link 
+          
+          <% Object.keys(nav).forEach(function(title) { %> 
+            <% if (nav[title] == '/home') { %> 
+              active" 
+            <% } else { %>
+              " 
+              <% } %>
+            <% }) %>
+          
+          onClick="return moveTo($(this))" aria-current="page" href="#">HOME</a>
+
+          <span class="nav-underline-container">
+
+          <span id="nav-underline-home" class="nav-select-indicator"></span>
+        
+          </span>
+
+        </li>
+        
+        <li class="nav-item
+        
+        <% Object.keys(nav).forEach(function(title) { %> 
+          <% if (nav[title] == '/home') { %> 
+            ">
+          <% } else if (nav[title] == '/contact' || nav[title] == '/submitted') { %>
+            d-none">
+            <% } %>
+          <% }) %>
+          
+          <a id="services" class="nav-link" onClick="return moveTo($(this))">SERVICES</a>
+
+          <span class="nav-underline-container">
+
+            <span id="nav-underline-services" class="nav-select-indicator"></span>
+        
+          </span>
+
+        </li>
+
+        <li class="nav-item
+
+        <% Object.keys(nav).forEach(function(title) { %> 
+          <% if (nav[title] == '/home') { %> 
+            ">
+          <% } else if (nav[title] == '/contact' || nav[title] == '/submitted') { %>
+            d-none">
+            <% } %>
+          <% }) %>
+          
+          <a id="about-us" class="nav-link" onClick="return moveTo($(this))" aria-current="page">ABOUT US</a>
+
+          <span class="nav-underline-container">
+
+          <span id="nav-underline-about" class="nav-select-indicator"></span>
+        
+          </span>
+
+        </li>
+        
+        <li class="nav-item
+        <% Object.keys(nav).forEach(function(title) { %> 
+          <% if (nav[title] == '/home') { %> 
+            ">
+          <% } else if (nav[title] == '/contact' || nav[title] == '/submitted') { %>
+            d-none">
+            <% } %>
+          <% }) %>
+          
+          <a id="graphics" class="nav-link" onClick="return moveTo($(this))">GRAPHICS</a>
+
+          <span class="nav-underline-container">
+
+          <span id="nav-underline-graphics" class="nav-select-indicator"></span>
+        
+          </span>
+
+        </li>
+
+        <li class="nav-item
+
+        <% Object.keys(nav).forEach(function(title) { %> 
+          <% if (nav[title] == '/home') { %> 
+            ">
+          <% } else if (nav[title] == '/contact' || nav[title] == '/submitted') { %>
+            d-none">
+            <% } %>
+          <% }) %>
+          
+          <a id="web-services" class="nav-link" onClick="return moveTo($(this))">WEB SERVICES</a>
+
+          <span class="nav-underline-container">
+
+          <span id="nav-underline-webservices" class="nav-select-indicator"></span>
+        
+          </span>
+
+        </li>
+
+        <li class="nav-item">
+          
+          <a id="contact" class="nav-link
+          
+          <% Object.keys(nav).forEach(function(title) { %> 
+            <% if (nav[title] == '/contact' || nav[title] == '/submitted') { %> 
+              active" 
+            <% } else { %>
+              " 
+              <% } %>
+            <% }) %>
+
+           href="/contact">CONTACT</a>
+
+          <span class="nav-underline-container">
+
+          <span id="nav-underline-contact" class="nav-select-indicator"></span>
+        
+          </span>
+
+        </li>
+
+    </div>
+
+</nav>
